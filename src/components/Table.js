@@ -2,8 +2,8 @@ import _ from 'lodash';
 import Pager from 'react-pager';
 import React, { Component } from 'react';
 
-import ImageUtil from "./ImageUtil";
-import {PAGER_VISIBLE_PAGES} from './settings';
+import ImageUtil from "../util/ImageUtil";
+import {PAGER_VISIBLE_PAGES} from '../settings';
 
 export default class Table extends Component {
     renderPager() {
@@ -27,10 +27,10 @@ export default class Table extends Component {
                 thumbnailData = ImageUtil.normalizeImageData(data.thumbnail),
                 slug = data.slug;
 
-            let className = 'row';
+            let className = 'search-results-list-row';
 
             if (this.props.selectedRow === count) {
-                className += ' selected';
+                className += ' search-results-list-row-selected';
             }
 
             return (
@@ -48,6 +48,8 @@ export default class Table extends Component {
     }
 
     renderSpinner() {
+        // using multiple layers for the spinner because we want opaque overall background (search-results-spinner-background)
+        // but non-opaque text background (search-results-spinner-front-inner)
         return this.props.loading && (
             <div className="search-results-spinner">
                 <div className="search-results-spinner-background" />

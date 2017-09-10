@@ -8,7 +8,7 @@ class Buttons extends Component {
                 return (
                     <button key={'button-' + i}
                          className={'button'}
-                         onClick={_.partial(self.props.onClick, buttonData)}>
+                         onClick={_.partial(self.props.onClick, buttonData.query)}>
                         {buttonData.label}
                     </button>
                 );
@@ -23,10 +23,12 @@ class Buttons extends Component {
 }
 
 Buttons.propTypes = {
+    data: React.PropTypes.arrayOf(React.PropTypes.object),
     onClick: React.PropTypes.func
 };
 
 Buttons.defaultProps = {
+    data: [],
     onClick: _.noop
 };
 

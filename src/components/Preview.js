@@ -17,16 +17,16 @@ class Preview extends Component {
                      alt={slug}
                      title={slug} />
                 <div className='preview-details'>
-                    <div>Width: {previewImage.width}</div>
-                    <div>Height: {previewImage.height}</div>
-                    <div>Size: {previewImage.size}</div>
+                    <div className='preview-details-width'>Width: {previewImage.width}</div>
+                    <div className='preview-details-height'>Height: {previewImage.height}</div>
+                    <div className='preview-details-size'>Size: {previewImage.size}</div>
                     <ClipboardButton
                         data-clipboard-text={previewImage.url}
-                        className='button clipboard-button'
-                        button-title='Click to copy URL'>
-                        Copy URL
+                        className='button preview-details-clipboard-button'
+                        button-title='Click to copy URL'>Copy URL
                     </ClipboardButton>
                     <a target='_blank'
+                       className='preview-details-open-in-new-tab-link'
                        href={previewImage.url}>
                         <button className='button'>Open in new tab</button>
                     </a>
@@ -37,7 +37,7 @@ class Preview extends Component {
 }
 
 Preview.propTypes = {
-    data: React.PropTypes.object
+    data: React.PropTypes.object.isRequired
 };
 
 export default Preview;

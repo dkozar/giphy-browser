@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import getQueryParameterByName from './getQueryParameterByName';
+import WindowUtil from '../util/WindowUtil';
 import Buttons from './Buttons';
 import HeaderTextRotator from './HeaderTextRotator';
 
@@ -16,7 +16,7 @@ export default class Header extends Component {
 
     componentDidMount() {
         // reading customized search buttons from the URL (overriding the default ones)
-        var buttonsQuery = getQueryParameterByName('buttons');
+        var buttonsQuery = WindowUtil.getQueryParameterByName('buttons');
 
         if (buttonsQuery) {
             this.setState({

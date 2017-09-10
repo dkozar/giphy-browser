@@ -1,11 +1,11 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 
-import Header from './Header';
-import Logo from './Logo';
-import Preview from './Preview';
-import search from './search';
-import Table from "./Table";
+import Header from './components/Header';
+import Logo from './components/Logo';
+import Preview from './components/Preview';
+import search from './util/search';
+import Table from "./components/Table";
 
 import './styles/App.css';
 import './styles/Button.css';
@@ -59,7 +59,7 @@ class App extends Component {
     }
 
     displaySearchResults(response) {
-        var pagination = response.pagination;
+        const pagination = response.pagination;
 
         this.setState({
             loading: false,
@@ -75,11 +75,11 @@ class App extends Component {
         });
     }
 
-    buttonClickHandler(e) {
+    buttonClickHandler(query) {
         this.setState({
-            query: e.query,
             currentPage: 0,
-            selectedRow: -1
+            selectedRow: -1,
+            query
         }, _.partial(this.search, true));
     }
 
@@ -96,7 +96,7 @@ class App extends Component {
                 <Header onSearch={this.buttonClickHandler} />
             ),
             preview = this.state.previewImageData && (
-                <Preview data={this.state.previewImageData}/>
+                <Preview data={this.state.previewImageData} />
             ),
             logo = !searched && (
                 <Logo />

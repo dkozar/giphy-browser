@@ -1,4 +1,4 @@
-import {PREVIEW_IMAGE_FORMAT, ROW_INNER_HEIGHT, SEARCH_IMAGE_FORMAT} from './settings';
+import {PREVIEW_IMAGE_FORMAT, ROW_INNER_HEIGHT, SEARCH_IMAGE_FORMAT} from '../settings';
 
 export default class ImageUtil {}
 
@@ -11,14 +11,12 @@ ImageUtil.convertImageData = (image) => {
     return {
         thumbnail: image.images[SEARCH_IMAGE_FORMAT],
         preview: image.images[PREVIEW_IMAGE_FORMAT],
-        slug: image.slug,
-        width: image.width,
-        height: image.height
+        slug: image.slug
     };
-}
+};
 
 ImageUtil.normalizeImageSize = (width, height) => {
-    var ratio = Math.min(ROW_INNER_HEIGHT / height, 1);
+    const ratio = Math.min(ROW_INNER_HEIGHT / height, 1);
 
     return {
         width: Math.floor(width * ratio),
@@ -27,7 +25,7 @@ ImageUtil.normalizeImageSize = (width, height) => {
 };
 
 ImageUtil.normalizeImageData = (imageData) => {
-    var size = ImageUtil.normalizeImageSize(imageData.width, imageData.height);
+    const size = ImageUtil.normalizeImageSize(imageData.width, imageData.height);
 
     return {
         ...imageData,

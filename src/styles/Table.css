@@ -13,7 +13,7 @@
     overflow: auto;
 }
 
-.search-results-list .row {
+.search-results-list-row {
     height: 80px;
     margin: 0 10px 10px 10px;
     padding: 10px;
@@ -21,12 +21,12 @@
     text-align: left;
 }
 
-.search-results-list .row:hover {
+.search-results-list-row:hover {
     background-color: #8d44ad;
     cursor: pointer;
 }
 
-.search-results-list .row.selected {
+.search-results-list-row-selected {
     background-color: #8d44ad;
     cursor: default;
 }

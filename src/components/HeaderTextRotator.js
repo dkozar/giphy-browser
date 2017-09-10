@@ -3,11 +3,11 @@ import WrappyText from 'react-wrappy-text';
 
 const texts = [
     'Giphy browser.',
-    'Click buttons below to initiate search.',
-    'You can define search buttons via URL as "?buttons=foo,bar".',
+    'Click the buttons below to initiate search.',
+    'You can define buttons via URL as "?buttons=foo,bar".',
     'Select any of the search results.',
     'Image preview should be displayed on the right.',
-    'Copyright 2017 by Danko Kozar'
+    '[ Copyright 2017 by Danko Kozar ]'
 ];
 
 export default class HeaderTextRotator extends Component {

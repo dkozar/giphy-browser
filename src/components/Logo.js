@@ -7,7 +7,7 @@ export default class Logo extends Component {
             <div className='flex-parent-centered transparent-for-clicks'>
                 <div className='logo'>
                     <div className='logo-title'>Giphy browser</div>
-                    <div className='logo-subtitle'>[ click search button above ]</div>
+                    <div className='logo-subtitle'>[ click the search buttons above ]</div>
                 </div>
             </div>
         );

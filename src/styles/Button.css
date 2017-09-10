@@ -1,19 +1,19 @@
 .button {
+    padding: 10px 20px 10px 20px;
     background: #34495e;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0px;
-    font-family: Arial;
+    border: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #ffffff;
     font-size: 20px;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-    border: 0;
 }
 
 .button:hover {
     background: #8d44ad;
-    text-decoration: none;
+}
+
+.app-header .button {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .app-content .button {
@@ -24,9 +24,4 @@
 .app-content .button:hover {
     background: #8d44ad;
     text-decoration: none;
-}
-
-.buttons .button {
-    margin-left: 5px;
-    margin-right: 5px;
 }
